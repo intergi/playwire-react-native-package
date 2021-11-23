@@ -1,7 +1,7 @@
 <H1 align="center">Playwire React Native SDK</H1>
 
 <p align="center">
-    <a href="http://www.playwire.com"><img alt="Version" src="https://img.shields.io/badge/version-3.2.0-blue"></a>
+    <a href="http://www.playwire.com"><img alt="Version" src="https://img.shields.io/badge/version-3.3.0-blue"></a>
 </p>
 
 ---
@@ -20,7 +20,40 @@ The module intended to be used alongside [React Native](https://github.com/faceb
 
 We also assume you are working on a machine with Xcode or Android Studio installed and setup.
 
-1. Install the `Playwire React Native SDK` with [npm](https://www.npmjs.com) or [yarn](https://yarnpkg.com).
+1. The `Playwire React Native SDK` is stored on GitHub Packages, that is why you have to create a local `.npmrc` file or edit global one (`~/.npmrc`) to configure the scope mapping for your project. In the `.npmrc` file, insert the command below so GitHub Packages knows where to route package requests. Using an `.npmrc` file prevents from accidentally searching the package in the npmjs.org instead of GitHub Packages.
+
+    ```bash
+    @intergi:registry=https://npm.pkg.github.com
+    ```
+
+2. Even though the `Playwire React Native SDK` is accessible publicly, GitHub still requires to do authentication. See the official [GitHub Package's guide](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-with-a-personal-access-token) to get more details about GitHub Packages authentication. 
+You can authenticate to GitHub Packages with npm by either editing your `.npmrc` file to include your personal access token(PAT) or by logging in to npm on the command line using your username and PAT. See the official [GitHub guide](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) to get more details about PAT creation.
+
+* To authenticate by adding your personal access token to your `.npmrc` file, edit the `.npmrc` file and include the following line, replacing `<GITHUB_PERSONAL_TOKEN>` with your personal access token.
+
+    ```bash
+    @intergi:registry=https://npm.pkg.github.com
+    //npm.pkg.github.com/:_authToken=<GITHUB_PERSONAL_TOKEN>
+    ```
+
+* To authenticate by logging in to npm, use the next command, replacing `USERNAME` with your GitHub username, `GITHUB_PERSONAL_TOKEN` with your personal access token, and `PUBLIC-EMAIL-ADDRESS` with your email address.
+If GitHub Packages is not your default package registry for using npm, we recommend you use the `--scope` flag with the owner of the package when you authenticate to GitHub Packages.
+
+    ```bash
+    $ npm login --scope=@intergi --registry=https://npm.pkg.github.com
+
+    > Username: USERNAME
+    > Password: GITHUB_PERSONAL_TOKEN
+    > Email: PUBLIC-EMAIL-ADDRESS
+    ```
+>**Note**: If you have faced with the `npm ERR! code UNABLE_TO_GET_ISSUER_CERT_LOCALLY` error during login, run next command to resolve it. See more options [here](https://stackoverflow.com/a/45884819/6245536).
+ 
+
+    ```bash
+    $ npm config set strict-ssl false
+    ```
+
+3. Install the `Playwire React Native SDK` with [npm](https://www.npmjs.com) or [yarn](https://yarnpkg.com).
 
     ```bash
     $ npm install @intergi/react-native-playwire-sdk
@@ -40,17 +73,17 @@ We also assume you are working on a machine with Xcode or Android Studio install
     $ yarn add @intergi/react-native-playwire-sdk@x.y.z
     ```
 
-2. Once installing has been finished, the set of dependencies should be resolved. Follow the [Dependencies installation](#dependencies-installation) section to resolve all required dependencies.
-3. Search for the configuration files emailed by your Playwire Account Manager. You should have files for both iOS and Android.
-4. Copy and paste the file to iOS project assets (for the iOS file) and Android project assets (for the Android file).
-5. Follow the [Project Configuration](#project-configuration) section to adjust project's configuration.
-6. Import the `Playwire React Native SDK` to your project.
+4. Once installing has been finished, the set of dependencies should be resolved. Follow the [Dependencies installation](#dependencies-installation) section to resolve all required dependencies.
+5. Search for the configuration files emailed by your Playwire Account Manager. You should have files for both iOS and Android.
+6. Copy and paste the file to iOS project assets (for the iOS file) and Android project assets (for the Android file).
+7. Follow the [Project Configuration](#project-configuration) section to adjust project's configuration.
+8. Import the `Playwire React Native SDK` to your project.
 
     ```ts
     import {Playwire} from '@intergi/react-native-playwire-sdk';
     ```
 
-7. Build and run your React Native project.
+9. Build and run your React Native project.
 
 ## Dependencies installation
 
@@ -369,6 +402,8 @@ Playwire.getInterstitialReady(adUnitId, isReady => {
 If the interstitial is loaded successfully, you can present full screen content.
 
 ```ts
+import {Playwire} from '@intergi/react-native-playwire-sdk';
+
 string adUnitId = "AdUnitId";
 Playwire.showInterstitial(adUnitId);
 ```
@@ -440,6 +475,8 @@ To display a rewarded ad on your app, you must first request it and provide the 
 When requesting a rewarded ad, we recommend that you do so in advance before planning to present it to your user as the loading process may take time.
 
 ```ts
+import {Playwire} from '@intergi/react-native-playwire-sdk';
+
 var adUnitId = "AdUnitId";
 Playwire.loadRewarded(adUnitId);
 ```
@@ -462,6 +499,8 @@ Playwire.getIsRewardedReady(adUnitId, isReady => {
 If the rewarded ad is loaded successfully, you can present full screen content.
 
 ```ts
+import {Playwire} from '@intergi/react-native-playwire-sdk';
+
 var adUnitId = "AdUnitId";
 Playwire.showRewarded(adUnitId);
 ``` 
@@ -522,7 +561,7 @@ export namespace Playwire {
     /**
     * It is fired when a reward has been earned.
     */
-    export function addRewardedEarnedEventListener(callback: (adUnitId: string) => void): void;
+    export function addRewardedEarnedEventListener(callback: (reward: AdReward) => void): void;
     /**
     * It is fired when a click has been recorded for the rewarded ad.
     */
