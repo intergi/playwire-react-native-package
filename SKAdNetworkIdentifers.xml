@@ -1,502 +1,562 @@
 <plist version="1.0">
-  <dict>
-    <key>SKAdNetworkItems</key>
-    <array>
-      <!--  A9 Inc  -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>p78axxw29g.skadnetwork</string>
-      </dict>
-      <!--  Aarki  -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>4fzdc2evr5.skadnetwork</string>
-      </dict>
-      <!--  AdColony  -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>4pfyvq9l8r.skadnetwork</string>
-      </dict>
-      <!--  AdColony / Mobilike  -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>6g9af3uyq4.skadnetwork</string>
-      </dict>
-      <!--  AdForm  -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>2fnua5tdw4.skadnetwork</string>
-      </dict>
-      <!--  Adikteev  -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>ydx93a7ass.skadnetwork</string>
-      </dict>
-      <!--  AdMob  -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>cstr6suwn9.skadnetwork</string>
-      </dict>
-      <!--  AdTheorent  -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>cg4yq2srnc.skadnetwork</string>
-      </dict>
-      <!--  Affle International Pte. Ltd.  -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>5a6flpkh64.skadnetwork</string>
-      </dict>
-      <!--  Appier  -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>v72qych5uu.skadnetwork</string>
-      </dict>
-      <!--  AppLovin  -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>ludvb6z3bs.skadnetwork</string>
-      </dict>
-      <!--  Appreciate  -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>mlmmfzh3r3.skadnetwork</string>
-      </dict>
-      <!--  Beeswax  -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>c6k4g5qg8m.skadnetwork</string>
-      </dict>
-      <!--  Bidmachine -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>wg4vff78zm.skadnetwork</string>
-      </dict>
-      <!--  BidSlash  -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>g28c52eehv.skadnetwork</string>
-      </dict>
-      <!--  Biga bid Media LTD  -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>3qy4746246.skadnetwork</string>
-      </dict>
-      <!--  Blis Media  -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>ggvn48r87g.skadnetwork</string>
-      </dict>
-      <!--  Brave People Ltd.  -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>252b5q8x7y.skadnetwork</string>
-      </dict>
-      <!--  Bucksense Inc  -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>mls7yz5dvl.skadnetwork</string>
-      </dict>
-      <!--  Bytedance  -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>22mmun2rn5.skadnetwork</string>
-      </dict>
-      <!--  Centro Inc.  -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>3sh42y64q3.skadnetwork</string>
-      </dict>
-      <!--  Chartboost Inc.  -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>f38h382jlk.skadnetwork</string>
-      </dict>
-      <!--  Cheetah Medialink HK Limited  -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>24t9a8vw3c.skadnetwork</string>
-      </dict>
-      <!--  Criteo SA  -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>hs6bdukanm.skadnetwork</string>
-      </dict>
-      <!--  Criteo SA  -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>9rd848q2bz.skadnetwork</string>
-      </dict>
-      <!--  CrossInstall Inc.  -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>prcb7njmu6.skadnetwork</string>
-      </dict>
-      <!--  Dataset  -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>m8dbw4sv7c.skadnetwork</string>
-      </dict>
-      <!--  Edge 226  -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>9nlqeag3gk.skadnetwork</string>
-      </dict>
-      <!--  EngageBDR  -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>cj5566h2ga.skadnetwork</string>
-      </dict>
-      <!--  Facebook  -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>v9wttpbfk9.skadnetwork</string>
-      </dict>
-      <!--  Facebook  -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>n38lu8286q.skadnetwork</string>
-      </dict>
-      <!--  Fiksu  -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>u679fj5vs4.skadnetwork</string>
-      </dict>
-      <!--  Fyber  -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>9g2aggbj52.skadnetwork</string>
-      </dict>
-      <!--  Hybrid  -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>w9q455wk68.skadnetwork</string>
-      </dict>
-      <!--  HyprMx  -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>nu4557a4je.skadnetwork</string>
-      </dict>
-      <!--  InMobi Pte. Ltd  -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>wzmmz9fp6w.skadnetwork</string>
-      </dict>
-      <!--  IronSource  -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>su67r6k2v3.skadnetwork</string>
-      </dict>
-      <!--  Jampp  -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>yclnxrl5pm.skadnetwork</string>
-      </dict>
-      <!-- Lifestreet -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>t38b2kh725.skadnetwork</string>
-      </dict>
-      <!-- Liftoff -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>7ug5zh24hu.skadnetwork</string>
-      </dict>
-      <!--  LiquidM  -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>rx5hdcabgc.skadnetwork</string>
-      </dict>
-      <!--  LoopMe  -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>5lm9lj6jb7.skadnetwork</string>
-      </dict>
-      <!--  Maio  -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>v4nxqhlyqp.skadnetwork</string>
-      </dict>
-      <!-- Maxpoint Interactive Inc -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>mtkv5xtk9e.skadnetwork</string>
-      </dict>
-      <!--  MediaMath  -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>n6fk4nfna4.skadnetwork</string>
-      </dict>
-      <!-- Mediasmart -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>7rz58n8ntl.skadnetwork</string>
-      </dict>
-      <!--  Mintegral International Limited  -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>kbd757ywx3.skadnetwork</string>
-      </dict>
-      <!--  MMG  -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>ejvt5qm6ak.skadnetwork</string>
-      </dict>
-      <!--  mobupps  -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>275upjj5gd.skadnetwork</string>
-      </dict>
-      <!-- Moloco -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>9t245vhmpl.skadnetwork</string>
-      </dict>
-      <!--  Mopub  -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>7953jerfzd.skadnetwork</string>
-      </dict>
-      <!--  MyTarget  -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>n9x2a789qt.skadnetwork</string>
-      </dict>
-      <!--  Pangle  -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>238da6jt44.skadnetwork</string>
-      </dict>
-      <!--  Personaly  -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>44jx6755aq.skadnetwork</string>
-      </dict>
-      <!--  Pubnative  -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>tl55sbb4fm.skadnetwork</string>
-      </dict>
-      <!--  Realtime Technologies GmbH  -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>4468km3ulz.skadnetwork</string>
-      </dict>
-      <!--  Remerge  -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>2u9pt9hc89.skadnetwork</string>
-      </dict>
-      <!--  RhythmOne  -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>zq492l623r.skadnetwork</string>
-      </dict>
-      <!--  RhythmOne  -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>pwa73g5rt2.skadnetwork</string>
-      </dict>
-      <!--  RTB House  -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>8s468mfl3y.skadnetwork</string>
-      </dict>
-      <!--  Sabio  -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>glqzh8vgby.skadnetwork</string>
-      </dict>
-      <!--  ScaleMonk Inc.  -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>av6w8kgt66.skadnetwork</string>
-      </dict>
-      <!--  Sift Media  -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>klf5c3l5u5.skadnetwork</string>
-      </dict>
-      <!--  Singular Labs, Inc  -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>hdw39hrw9y.skadnetwork</string>
-      </dict>
-      <!--  Singular Labs, Inc  -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>y45688jllp.skadnetwork</string>
-      </dict>
-      <!--  Singular Labs, Inc  -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>dzg6xy7pwj.skadnetwork</string>
-      </dict>
-      <!--  Smadex S.L.  -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>ppxm28t8ap.skadnetwork</string>
-      </dict>
-      <!--  Snap Inc.  -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>424m5254lk.skadnetwork</string>
-      </dict>
-      <!--  Spotad Ltd.  -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>f73kdq92p3.skadnetwork</string>
-      </dict>
-      <!--  StartApp Inc  -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>5l3tpt7t6e.skadnetwork</string>
-      </dict>
-      <!--  Tapjoy  -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>ecpz2srf59.skadnetwork</string>
-      </dict>
-      <!-- Trade Desk Inc. -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>uw77j35x4d.skadnetwork</string>
-      </dict>
-      <!-- Twitter -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>9yg77x724h.skadnetwork</string>
-      </dict>
-      <!-- Twitter -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>n66cz3y3bx.skadnetwork</string>
-      </dict>
-      <!-- Twitter -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>prcb7njmu6.skadnetwork</string>
-      </dict>
-      <!--  UNICORN  -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>578prtvx9j.skadnetwork</string>
-      </dict>
-      <!--  UnityAds  -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>4dzt52r2t5.skadnetwork</string>
-      </dict>
-      <!--  VerizonMedia  -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>e5fvkxwrpn.skadnetwork</string>
-      </dict>
-      <!--  Vungle  -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>gta9lk7p23.skadnetwork</string>
-      </dict>
-      <!--  Webeye -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>5tjdwbrq8w.skadnetwork</string>
-      </dict>
-      <!--  Yeahmobi -->
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>32z4fx6l9h.skadnetwork</string>
-      </dict>
-      <!--  YouAppi  -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>3rd42ekr43.skadnetwork</string>
-      </dict>
-      <!--  Anonimous from Smaato -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>8m87ys6875.skadnetwork</string>
-      </dict>
-      <!--  Anonimous from Smaato -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>488r3q3dtq.skadnetwork</string>
-      </dict>
-      <!--  Anonimous from Smaato -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>488r3q3dtq.skadnetwork</string>
-      </dict>
-      <!--  Anonimous from Smaato -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>zmvfpc5aq8.skadnetwork</string>
-      </dict>
-      <!--  Anonimous from Smaato -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>97r2b46745.skadnetwork</string>
-      </dict>
-      <!--  Anonimous from Smaato -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>6xzpu9s2p8.skadnetwork</string>
-      </dict>
-      <!--  Anonimous from Smaato -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>52fl2v3hgk.skadnetwork</string>
-      </dict>
-      <!--  Anonimous from Smaato -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>523jb4fst2.skadnetwork</string>
-      </dict>
-      <!--  Anonimous from Smaato -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>feyaarzu9v.skadnetwork</string>
-      </dict>
-      <!--  Anonimous from Smaato -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>x44k69ngh6.skadnetwork</string>
-      </dict>
-      <!--  Anonimous from Smaato -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>m5mvw97r93.skadnetwork</string>
-      </dict>
-      <!--  Anonimous from Smaato -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>89z7zv988g.skadnetwork</string>
-      </dict>
-      <!--  Anonimous from Smaato -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>k674qkevps.skadnetwork</string>
-      </dict>
-      <!--  Anonimous from Smaato -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>hb56zgv37p.skadnetwork</string>
-      </dict>
-      <!--  Anonimous from Smaato -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>rvh3l7un93.skadnetwork</string>
-      </dict>
-      <!--  Anonimous from AppLovin -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>3qcr597p9d.skadnetwork</string>
-      </dict>
-      <!--  Anonimous from Google -->
-      <dict>
-          <key>SKAdNetworkIdentifier</key>
-          <string>s39g8k73mm.skadnetwork</string>
-      </dict>
-    </array>
-  </dict>
+    <dict>
+        <key>SKAdNetworkItems</key>
+        <array>
+            <!--  A9 Inc  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>p78axxw29g.skadnetwork</string>
+            </dict>
+            <!--  Aarki  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>4fzdc2evr5.skadnetwork</string>
+            </dict>
+            <!--  AdColony  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>4pfyvq9l8r.skadnetwork</string>
+            </dict>
+            <!--  AdColony / Mobilike  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>6g9af3uyq4.skadnetwork</string>
+            </dict>
+            <!--  AdForm  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>2fnua5tdw4.skadnetwork</string>
+            </dict>
+            <!--  Adikteev  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>ydx93a7ass.skadnetwork</string>
+            </dict>
+            <!--  AdMob  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>cstr6suwn9.skadnetwork</string>
+            </dict>
+            <!--  AdTheorent  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>cg4yq2srnc.skadnetwork</string>
+            </dict>
+            <!--  Affle International Pte. Ltd.  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>5a6flpkh64.skadnetwork</string>
+            </dict>
+            <!--  Appier  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>v72qych5uu.skadnetwork</string>
+            </dict>
+            <!--  AppLovin  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>ludvb6z3bs.skadnetwork</string>
+            </dict>
+            <!--  Appreciate  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>mlmmfzh3r3.skadnetwork</string>
+            </dict>
+            <!--  Beeswax  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>c6k4g5qg8m.skadnetwork</string>
+            </dict>
+            <!--  Bidmachine -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>wg4vff78zm.skadnetwork</string>
+            </dict>
+            <!--  BidSlash  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>g28c52eehv.skadnetwork</string>
+            </dict>
+            <!--  Biga bid Media LTD  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>3qy4746246.skadnetwork</string>
+            </dict>
+            <!--  Blis Media  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>ggvn48r87g.skadnetwork</string>
+            </dict>
+            <!--  Brave People Ltd.  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>252b5q8x7y.skadnetwork</string>
+            </dict>
+            <!--  Bucksense Inc  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>mls7yz5dvl.skadnetwork</string>
+            </dict>
+            <!--  Bytedance  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>22mmun2rn5.skadnetwork</string>
+            </dict>
+            <!--  Centro Inc.  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>3sh42y64q3.skadnetwork</string>
+            </dict>
+            <!--  Chartboost Inc.  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>f38h382jlk.skadnetwork</string>
+            </dict>
+            <!--  Cheetah Medialink HK Limited  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>24t9a8vw3c.skadnetwork</string>
+            </dict>
+            <!--  Criteo SA  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>hs6bdukanm.skadnetwork</string>
+            </dict>
+            <!--  Criteo SA  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>9rd848q2bz.skadnetwork</string>
+            </dict>
+            <!--  CrossInstall Inc.  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>prcb7njmu6.skadnetwork</string>
+            </dict>
+            <!--  Dataset  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>m8dbw4sv7c.skadnetwork</string>
+            </dict>
+            <!--  Edge 226  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>9nlqeag3gk.skadnetwork</string>
+            </dict>
+            <!--  EngageBDR  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>cj5566h2ga.skadnetwork</string>
+            </dict>
+            <!--  Facebook  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>v9wttpbfk9.skadnetwork</string>
+            </dict>
+            <!--  Facebook  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>n38lu8286q.skadnetwork</string>
+            </dict>
+            <!--  Fiksu  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>u679fj5vs4.skadnetwork</string>
+            </dict>
+            <!--  Fyber  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>9g2aggbj52.skadnetwork</string>
+            </dict>
+            <!--  Hybrid  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>w9q455wk68.skadnetwork</string>
+            </dict>
+            <!--  HyprMx  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>nu4557a4je.skadnetwork</string>
+            </dict>
+            <!--  InMobi Pte. Ltd  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>wzmmz9fp6w.skadnetwork</string>
+            </dict>
+            <!--  IPONWEB Holding Ltd  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>294l99pt4k.skadnetwork</string>
+            </dict>
+            <!--  IronSource  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>su67r6k2v3.skadnetwork</string>
+            </dict>
+            <!--  Jampp  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>yclnxrl5pm.skadnetwork</string>
+            </dict>
+            <!-- Lifestreet -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>t38b2kh725.skadnetwork</string>
+            </dict>
+            <!-- Liftoff -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>7ug5zh24hu.skadnetwork</string>
+            </dict>
+            <!--  LiquidM  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>rx5hdcabgc.skadnetwork</string>
+            </dict>
+            <!--  LoopMe  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>5lm9lj6jb7.skadnetwork</string>
+            </dict>
+            <!--  Maio  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>v4nxqhlyqp.skadnetwork</string>
+            </dict>
+            <!-- Maxpoint Interactive Inc -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>mtkv5xtk9e.skadnetwork</string>
+            </dict>
+            <!--  MediaMath  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>n6fk4nfna4.skadnetwork</string>
+            </dict>
+            <!-- Mediasmart -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>7rz58n8ntl.skadnetwork</string>
+            </dict>
+            <!--  Mintegral International Limited  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>kbd757ywx3.skadnetwork</string>
+            </dict>
+            <!--  MMG  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>ejvt5qm6ak.skadnetwork</string>
+            </dict>
+            <!--  mobupps  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>275upjj5gd.skadnetwork</string>
+            </dict>
+            <!-- Moloco -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>9t245vhmpl.skadnetwork</string>
+            </dict>
+            <!--  Mopub  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>7953jerfzd.skadnetwork</string>
+            </dict>
+            <!--  MyTarget  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>n9x2a789qt.skadnetwork</string>
+            </dict>
+            <!--  Pangle  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>238da6jt44.skadnetwork</string>
+            </dict>
+            <!--  Personaly  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>44jx6755aq.skadnetwork</string>
+            </dict>
+            <!--  Pubnative  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>tl55sbb4fm.skadnetwork</string>
+            </dict>
+            <!--  Realtime Technologies GmbH  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>4468km3ulz.skadnetwork</string>
+            </dict>
+            <!--  Remerge  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>2u9pt9hc89.skadnetwork</string>
+            </dict>
+            <!--  RhythmOne  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>zq492l623r.skadnetwork</string>
+            </dict>
+            <!--  RhythmOne  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>pwa73g5rt2.skadnetwork</string>
+            </dict>
+            <!--  RTB House  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>8s468mfl3y.skadnetwork</string>
+            </dict>
+            <!--  Sabio  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>glqzh8vgby.skadnetwork</string>
+            </dict>
+            <!--  ScaleMonk Inc.  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>av6w8kgt66.skadnetwork</string>
+            </dict>
+            <!--  Sift Media  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>klf5c3l5u5.skadnetwork</string>
+            </dict>
+            <!--  Singular Labs, Inc  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>hdw39hrw9y.skadnetwork</string>
+            </dict>
+            <!--  Singular Labs, Inc  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>y45688jllp.skadnetwork</string>
+            </dict>
+            <!--  Singular Labs, Inc  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>dzg6xy7pwj.skadnetwork</string>
+            </dict>
+            <!--  Smadex S.L.  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>ppxm28t8ap.skadnetwork</string>
+            </dict>
+            <!--  Snap Inc.  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>424m5254lk.skadnetwork</string>
+            </dict>
+            <!--  Spotad Ltd.  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>f73kdq92p3.skadnetwork</string>
+            </dict>
+            <!--  StartApp Inc  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>5l3tpt7t6e.skadnetwork</string>
+            </dict>
+            <!--  Tapjoy  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>ecpz2srf59.skadnetwork</string>
+            </dict>
+            <!-- Trade Desk Inc. -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>uw77j35x4d.skadnetwork</string>
+            </dict>
+            <!-- Twitter -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>9yg77x724h.skadnetwork</string>
+            </dict>
+            <!-- Twitter -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>n66cz3y3bx.skadnetwork</string>
+            </dict>
+            <!-- Twitter -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>prcb7njmu6.skadnetwork</string>
+            </dict>
+            <!--  UNICORN  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>578prtvx9j.skadnetwork</string>
+            </dict>
+            <!--  UnityAds  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>4dzt52r2t5.skadnetwork</string>
+            </dict>
+            <!--  VerizonMedia  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>e5fvkxwrpn.skadnetwork</string>
+            </dict>
+            <!--  Vungle  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>gta9lk7p23.skadnetwork</string>
+            </dict>
+            <!--  Webeye -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>5tjdwbrq8w.skadnetwork</string>
+            </dict>
+            <!--  Yeahmobi -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>32z4fx6l9h.skadnetwork</string>
+            </dict>
+            <!--  YouAppi  -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>3rd42ekr43.skadnetwork</string>
+            </dict>
+            <!--  Anonimous from Smaato -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>8m87ys6875.skadnetwork</string>
+            </dict>
+            <!--  Anonimous from Smaato -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>488r3q3dtq.skadnetwork</string>
+            </dict>
+            <!--  Anonimous from Smaato -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>488r3q3dtq.skadnetwork</string>
+            </dict>
+            <!--  Anonimous from Smaato -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>zmvfpc5aq8.skadnetwork</string>
+            </dict>
+            <!--  Anonimous from Smaato -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>97r2b46745.skadnetwork</string>
+            </dict>
+            <!--  Anonimous from Smaato -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>6xzpu9s2p8.skadnetwork</string>
+            </dict>
+            <!--  Anonimous from Smaato -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>52fl2v3hgk.skadnetwork</string>
+            </dict>
+            <!--  Anonimous from Smaato -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>523jb4fst2.skadnetwork</string>
+            </dict>
+            <!--  Anonimous from Smaato -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>feyaarzu9v.skadnetwork</string>
+            </dict>
+            <!--  Anonimous from Smaato -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>x44k69ngh6.skadnetwork</string>
+            </dict>
+            <!--  Anonimous from Smaato -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>m5mvw97r93.skadnetwork</string>
+            </dict>
+            <!--  Anonimous from Smaato -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>89z7zv988g.skadnetwork</string>
+            </dict>
+            <!--  Anonimous from Smaato -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>k674qkevps.skadnetwork</string>
+            </dict>
+            <!--  Anonimous from Smaato -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>hb56zgv37p.skadnetwork</string>
+            </dict>
+            <!--  Anonimous from Smaato -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>rvh3l7un93.skadnetwork</string>
+            </dict>
+            <!--  Anonimous from Smaato -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>qqp299437r.skadnetwork</string>
+            </dict>
+            <!--  Anonimous from Smaato -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>b9bk5wbcq9.skadnetwork</string>
+            </dict>
+            <!--  Anonimous from Smaato -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>bxvub5ada5.skadnetwork</string>
+            </dict>
+            <!--  Anonimous from Smaato -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>kbmxgpxpgc.skadnetwork</string>
+            </dict>
+            <!--  Anonimous from Smaato -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>6v7lgmsu45.skadnetwork</string>
+            </dict>
+            <!--  Anonimous from Smaato -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>m297p6643m.skadnetwork</string>
+            </dict>
+            <!--  Anonimous from Smaato -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>r45fhb6rf7.skadnetwork</string>
+            </dict>
+            <!--  Anonimous from Smaato -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>3l6bd9hu43.skadnetwork</string>
+            </dict>
+            <!--  Anonimous from Smaato -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>vcra2ehyfk.skadnetwork</string>
+            </dict>
+            <!--  Anonimous from Smaato -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>74b6s63p6l.skadnetwork</string>
+            </dict>
+            <!--  Anonimous from Smaato -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>mp6xlyr22a.skadnetwork</string>
+            </dict>
+            <!--  Anonimous from AppLovin -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>3qcr597p9d.skadnetwork</string>
+            </dict>
+            <!--  Anonimous from Google -->
+            <dict>
+                <key>SKAdNetworkIdentifier</key>
+                <string>s39g8k73mm.skadnetwork</string>
+            </dict>
+        </array>
+    </dict>
 </plist>

@@ -1,7 +1,7 @@
 <H1 align="center">Playwire React Native SDK</H1>
 
 <p align="center">
-    <a href="http://www.playwire.com"><img alt="Version" src="https://img.shields.io/badge/version-3.3.0-blue"></a>
+    <a href="http://www.playwire.com"><img alt="Version" src="https://img.shields.io/badge/version-3.3.2-blue"></a>
 </p>
 
 ---
@@ -212,6 +212,9 @@ You have to create a **`keystore.properties`** file by yourself using the templa
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.VIBRATE" />
 
+    <!--recommended by Smaato -->
+    <uses-feature android:name="android.hardware.location.network" />
+
     <application>
         <!--required by Google -->
         <meta-data
@@ -224,14 +227,6 @@ You have to create a **`keystore.properties`** file by yourself using the templa
         <!--required by Amazon -->
         <activity android:name="com.amazon.device.ads.DTBInterstitialActivity"/>
         <activity android:name="com.amazon.device.ads.DTBAdActivity"/>
-
-        <!--required by Smaato -->
-        <meta-data android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version"/>
-        <activity android:name="com.smaato.soma.ExpandedBannerActivity" 
-            android:configChanges="keyboardHidden|orientation|screenSize" />
-        <activity android:name="com.smaato.soma.interstitial.InterstitialActivity" 
-            android:configChanges="keyboardHidden|orientation|screenSize" />
     </application>
     ```
 
