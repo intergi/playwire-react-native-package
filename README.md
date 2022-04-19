@@ -1,7 +1,7 @@
 <H1 align="center">Playwire React Native SDK</H1>
 
 <p align="center">
-    <a href="http://www.playwire.com"><img alt="Version" src="https://img.shields.io/badge/version-3.3.2-blue"></a>
+    <a href="http://www.playwire.com"><img alt="Version" src="https://img.shields.io/badge/version-4.0.1-blue"></a>
 </p>
 
 ---
@@ -74,16 +74,15 @@ If GitHub Packages is not your default package registry for using npm, we recomm
     ```
 
 4. Once installing has been finished, the set of dependencies should be resolved. Follow the [Dependencies installation](#dependencies-installation) section to resolve all required dependencies.
-5. Search for the configuration files emailed by your Playwire Account Manager. You should have files for both iOS and Android.
-6. Copy and paste the file to iOS project assets (for the iOS file) and Android project assets (for the Android file).
-7. Follow the [Project Configuration](#project-configuration) section to adjust project's configuration.
-8. Import the `Playwire React Native SDK` to your project.
+5. Search for the initialization metadata (`publisherId`, `appId` and `version`) emailed by your Playwire Account Manager.
+6. Follow the [Project Configuration](#project-configuration) section to adjust project's configuration.
+7. Import the `Playwire React Native SDK` to your project.
 
     ```ts
     import {Playwire} from '@intergi/react-native-playwire-sdk';
     ```
 
-9. Build and run your React Native project.
+8. Build and run your React Native project.
 
 ## Dependencies installation
 
@@ -104,13 +103,33 @@ Do the following to resolve required dependencies for iOS:
     end
     ```
 
-2. Install the pods.
+2. Define the `Playwire` dependency in the Podfile. If you want to install the `Total` version, use dependency below.
+
+    ```ruby
+    target 'Your Project Target' do
+        # ...
+        pod 'Playwire', '4.0.1'
+        # ...
+    end
+    ```
+
+    If you want to install the `COPPA` version, you should refer to the corresponding specification.
+
+    ```ruby
+    target 'Your Project Target' do
+        # ...
+        pod 'Playwire/Coppa', '4.0.1'
+        # ...
+    end
+    ```
+
+3. Install the pods.
 
     ```bash
     $ npx pod-install
     ```
 
-3. Open your .xcworkspace file to see the project in Xcode and check installed `react-native-playwire-sdk`.
+4. Open your .xcworkspace file to see the project in Xcode and check installed `react-native-playwire-sdk`.
 
     ```bash
     $ open your-project.xcworkspace
@@ -166,7 +185,27 @@ You have to create a **`keystore.properties`** file by yourself using the templa
     }
     ```
 
-3. Sync project with Gradle Files to install dependencies.
+3. Define the `Playwire` dependency in the `android/app/build.gradle`. If you want to install the `Total` version, use dependency below.
+
+    ```gradle
+    dependencies {
+        // ...
+        api "com.intergi.playwire:playwiresdk_total:4.0.1"
+        // ...
+    }
+    ```
+
+    If you want to install the `COPPA` version, you should refer to the corresponding dependency.
+
+    ```gradle
+    dependencies {
+        // ...
+        api "com.intergi.playwire:playwiresdk_coppa:4.0.1"
+        // ...
+    }
+    ```
+
+4. Sync project with Gradle Files to install dependencies.
 
 ## Project Configuration
 
@@ -197,11 +236,10 @@ You have to create a **`keystore.properties`** file by yourself using the templa
 
 ### Android
 
-1. Update your app's `AndroidManifest.xml`.
+1. Update your app's `AndroidManifest.xml`. If you installed the `Total` version, add next values to the `AndroidManifest.xml`.
 
     ```xml
     <uses-permission android:name="android.permission.INTERNET" />
-    <!--required by Amazon -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <!--optional by Amazon if you need geo location -->
@@ -230,6 +268,25 @@ You have to create a **`keystore.properties`** file by yourself using the templa
     </application>
     ```
 
+    If you installed the `COPPA` version, add only next ones.
+
+    ```xml
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application>
+        <meta-data
+            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true"/>
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="YOUR_GOOGLE_APP_ID"/>
+    </application>
+    ```
+
 2. Update your app's `build.gradle` to declare Java 8 compatibility.
 
     ```text
@@ -241,6 +298,62 @@ You have to create a **`keystore.properties`** file by yourself using the templa
     }
     ```
 
+# Upgrade guide
+
+This section describes 3 steps for updating the `Playwire React Native SDK` to the latest version in your project.
+
+1. Update `@intergi/react-native-playwire-sdk` package to the latest version.
+
+    * If you are using `yarn` then run one of this commands:
+
+    ```bash
+    $ yarn upgrade @intergi/react-native-playwire-sdk
+    # or
+    $ yarn upgrade @intergi/react-native-playwire-sdk --latest
+    ```
+
+    > **Note**: Differences between such commands are described [here](https://jsramblings.com/how-to-upgrade-a-yarn-package-to-the-latest-version/).
+
+    * If you are using `npm` then run such command:
+
+    ```bash
+    $ npm install @intergi/react-native-playwire-sdk@latest
+    ```
+
+    * Verify that you did update the `Playwire React Native SDK` to the latest version by checking `@intergi/react-native-playwire-sdk` directory inside `node_modules` directory by looking at `package.json` file that has `"version": "???"` field.
+
+2. Update the `Playwire` pod dependency in iOS project.
+
+    * If you previously decided to integrate the `Playwire` pod using certain SDK version `x.y.z` then just update `x.y.z` to the latest `Playwire` version and run such command in root directory:
+
+    ```bash
+    $ npx pod-install
+    ```
+
+    * If you did not use certain SDK version, run such command in `ios` directory:
+
+    ```bash
+    $ pod update Playwire
+    # or
+    $ pod update Playwire/Coppa
+    ```
+
+    * Verify that you did update the `Playwire` pod to the latest version by checking logs from `npx pod-install` or `pod update Playwire` commands. You can also verify it by opening `ios/Podfile.lock` file and searching for `- Playwire (x.y.z)` line, where `x.y.z` is the version of the `Playwire` pod that was downloaded and integrated.
+
+3. Perform gradle sync in Android project.
+    
+    * Run Terminal CLI command `./gradlew sync` in `android` directory or preferably click "Sync now" in Android Studio. This should be enough if you have done 1st step beforehand correctly. 
+
+    * Verify that you did update the `Playwire` dependency by going through "External Libraries" window in Android Studio and searching for `com.intergi.playwire:playwiresdk:x.y.z`, where `x.y.z` is the version of the `Playwire` dependency that was downloaded and integrated.
+
+# Migration guide
+## Migrating from the Playwire React Native SDK 3.X.Y to the Playwire React Native SDK 4.X.Y
+
+1. If you haven't made it yet, upgrade to the `Playwire React Native SDK` 4.X.Y package. See the [Upgrade guide](#upgrade-guide) section to update the package.
+2. See the [Project Configuration](#project-configuration) section to adjust the project's configuration.
+3. The `Playwire React Native SDK` 4.X.Y introduces the new approach to fetch config files from the remote, that is why you have to remove old config files that are stored locally. They are called **`PWConfigFile.json`** usually, if you have not renamed it.
+4. Resolve all errors and issues regarding public API changes, e.g., `setConfigName` method does not exist anymore. See the [Initialization](#initialization) section to get more details.
+
 # Usage
 ## Initialization
 
@@ -248,25 +361,33 @@ Initialize the `Playwire React Native SDK` in your app.
 
 ```ts
 import {Playwire} from '@intergi/react-native-playwire-sdk';
-Playwire.initializeSDK(() => {
+import {Platform} from 'react-native';
+
+
+var YOUR_PUBLISHER_ID = 'YOUR_PUBLISHER_ID';
+var YOUR_APP_ID = '';
+var YOUR_VERSION = '';
+
+switch (Platform.OS) {
+case 'ios':
+    YOUR_APP_ID = 'YOUR_IOS_APP_ID';
+    YOUR_VERSION = 'YOUR_IOS_APP_VERSION';
+    break;
+case 'android':
+    YOUR_APP_ID = 'YOUR_ANDROID_APP_ID';
+    YOUR_VERSION = 'YOUR_ANDROID_APP_VERSION';
+    break;
+default:
+    console.error("Running on an unexpected platform.");
+    return;
+}
+
+Playwire.initializeSDK(YOUR_PUBLISHER_ID, YOUR_APP_ID, YOUR_VERSION, () => {
     // Playwire SDK is initialized here.
 });
 ```
 
-## Configuration
-
-The `Playwire React Native SDK` retrieves configuration data from the JSON file provided by Playwire. If you do not have this file, contact your Playwire Account Manager.
-By default, the `Playwire React Native SDK` looks for **`PWConfigFile.json`**.
-You can also provide a custom filename and set it as the config file for the SDK.
-
-```ts
-import {Playwire} from '@intergi/react-native-playwire-sdk';
-  
-var configName = "CUSTOM_CONFIG_FILE_NAME";
-Playwire.setConfigName(configName);
-```
-
->**Note**: To avoid any SDK configuration issues, set the custom config filename before initialization.
+> **Note**: A configuration file metadata such as `YOUR_PUBLISHER_ID`, `YOUR_APP_ID`, etc., must be provided by your Playwire Account Manager.
 
 ## Request for ads
 ### Request banner ads
@@ -370,7 +491,7 @@ See the list below for banner-related callbacks.
 
 To display an interstitial ad on your app, you must first request it and provide the ad unit.
 
-When requesting an interstitial ad, we recommend that you do so in advance before planning to present it to your user as the loading process my take time.
+When requesting an interstitial ad, we recommend that you do so in advance before planning to present it to your user as the loading process may take time.
 
 ```ts
 import {Playwire} from '@intergi/react-native-playwire-sdk';
@@ -476,7 +597,7 @@ var adUnitId = "AdUnitId";
 Playwire.loadRewarded(adUnitId);
 ```
 
-> **Note**: A rewarded ad is a one-time-use object, which means it must be loaded again after its shown. Use the `Playwire.getIsRewardedReady(adUnitId, callback` method to check if the ad is ready to be presented.
+> **Note**: A rewarded ad is a one-time-use object, which means it must be loaded again after its shown. Use the `Playwire.getIsRewardedReady(adUnitId, callback)` method to check if the ad is ready to be presented.
 
 ```ts
 import {Playwire} from '@intergi/react-native-playwire-sdk';
@@ -530,7 +651,7 @@ See the list below for rewarded-related methods to add listeners.
 ```ts
 export namespace Playwire {
     /**
-    * It is fired when the rewarded ad successfully loaded full screen content and ready to be presented.
+    * It is fired when the rewarded ad successfully loaded full screen content and is ready to be presented.
     */
     export function addRewardedLoadedEventListener(callback: (adUnitId: string) => void): void;
     /**
@@ -562,4 +683,13 @@ export namespace Playwire {
     */
     export function addRewardedClickedEventListener(callback: (adUnitId: string) => void): void;
 }
+```
+
+## Logger
+
+To start monitoring events inside the `Playwire React Native SDK` use a logger to log events to the IDE console. The logs can contain information about the event's name, ad unit parameters, ad server response, etc.
+
+```ts
+import {Playwire} from '@intergi/react-native-playwire-sdk';
+Playwire.startConsoleLogger();
 ```
