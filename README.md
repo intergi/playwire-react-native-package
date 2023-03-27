@@ -1,7 +1,7 @@
 <H1 align="center">Playwire React Native SDK</H1>
 
 <p align="center">
-    <a href="http://www.playwire.com"><img alt="Version" src="https://img.shields.io/badge/version-4.0.1-blue"></a>
+    <a href="http://www.playwire.com"><img alt="Version" src="https://img.shields.io/badge/version-8.1.0-blue"></a>
 </p>
 
 ---
@@ -74,7 +74,7 @@ If GitHub Packages is not your default package registry for using npm, we recomm
     ```
 
 4. Once installing has been finished, the set of dependencies should be resolved. Follow the [Dependencies installation](#dependencies-installation) section to resolve all required dependencies.
-5. Search for the initialization metadata (`publisherId`, `appId` and `version`) emailed by your Playwire Account Manager.
+5. Search for the initialization metadata (`publisherId`, `appId`) emailed by your Playwire Account Manager.
 6. Follow the [Project Configuration](#project-configuration) section to adjust project's configuration.
 7. Import the `Playwire React Native SDK` to your project.
 
@@ -108,7 +108,10 @@ Do the following to resolve required dependencies for iOS:
     ```ruby
     target 'Your Project Target' do
         # ...
-        pod 'Playwire', '4.0.1'
+        pod 'GoogleUtilities', :modular_headers => true
+        pod 'FirebaseCoreInternal', :modular_headers => true
+        pod 'FirebaseCore', :modular_headers => true
+        pod 'Playwire', '8.1.0'
         # ...
     end
     ```
@@ -118,7 +121,10 @@ Do the following to resolve required dependencies for iOS:
     ```ruby
     target 'Your Project Target' do
         # ...
-        pod 'Playwire/Coppa', '4.0.1'
+        pod 'GoogleUtilities', :modular_headers => true
+        pod 'FirebaseCoreInternal', :modular_headers => true
+        pod 'FirebaseCore', :modular_headers => true
+        pod 'Playwire/Coppa', '8.1.0'
         # ...
     end
     ```
@@ -161,6 +167,16 @@ You have to create a **`keystore.properties`** file by yourself using the templa
 
     // ...
 
+    buildscript {
+        // ...
+        dependencies {
+            // ...
+            classpath "com.google.gms:google-services:4.3.14"
+            // ...
+        }
+        // ...
+    }
+
     allprojects {
         // ...
         repositories {
@@ -177,7 +193,8 @@ You have to create a **`keystore.properties`** file by yourself using the templa
                 url 'https://android-sdk.is.com/'
             }
             maven {
-                url "https://s3.amazonaws.com/smaato-sdk-releases/"
+                // Pangle
+                url 'https://artifact.bytedance.com/repository/pangle/'
             }
             // ...
         }
@@ -190,7 +207,8 @@ You have to create a **`keystore.properties`** file by yourself using the templa
     ```gradle
     dependencies {
         // ...
-        api "com.intergi.playwire:playwiresdk_total:4.0.1"
+        api 'com.intergi.playwire:playwiresdk_total:8.1.0'
+        api 'com.google.firebase:firebase-analytics-ktx:21.1.1'
         // ...
     }
     ```
@@ -200,7 +218,8 @@ You have to create a **`keystore.properties`** file by yourself using the templa
     ```gradle
     dependencies {
         // ...
-        api "com.intergi.playwire:playwiresdk_coppa:4.0.1"
+        api 'com.intergi.playwire:playwiresdk_coppa:8.1.0'
+        api 'com.google.firebase:firebase-analytics-ktx:21.1.1'
         // ...
     }
     ```
@@ -212,7 +231,7 @@ You have to create a **`keystore.properties`** file by yourself using the templa
 ### iOS
 
 1. Update your app's `Info.plist`.
-    1. A `GADApplicationIdentifier` key with a string value provided by Playwire Account Manager, along with a config file.
+    1. A `GADApplicationIdentifier` key with a string value provided by Playwire Account Manager, along with an initialization metadata.
     2. A `SKAdNetworkItems` key with `SKAdNetworkIdentifier` values that can be found [here](https://github.com/intergi/playwire-react-native-package/blob/master/SKAdNetworkIdentifers.xml).
 
     ```xml
@@ -249,9 +268,6 @@ You have to create a **`keystore.properties`** file by yourself using the templa
     <!--recommended by AdColony -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.VIBRATE" />
-
-    <!--recommended by Smaato -->
-    <uses-feature android:name="android.hardware.location.network" />
 
     <application>
         <!--required by Google -->
@@ -345,15 +361,6 @@ This section describes 3 steps for updating the `Playwire React Native SDK` to t
     * Run Terminal CLI command `./gradlew sync` in `android` directory or preferably click "Sync now" in Android Studio. This should be enough if you have done 1st step beforehand correctly. 
 
     * Verify that you did update the `Playwire` dependency by going through "External Libraries" window in Android Studio and searching for `com.intergi.playwire:playwiresdk:x.y.z`, where `x.y.z` is the version of the `Playwire` dependency that was downloaded and integrated.
-
-# Migration guide
-## Migrating from the Playwire React Native SDK 3.X.Y to the Playwire React Native SDK 4.X.Y
-
-1. If you haven't made it yet, upgrade to the `Playwire React Native SDK` 4.X.Y package. See the [Upgrade guide](#upgrade-guide) section to update the package.
-2. See the [Project Configuration](#project-configuration) section to adjust the project's configuration.
-3. The `Playwire React Native SDK` 4.X.Y introduces the new approach to fetch config files from the remote, that is why you have to remove old config files that are stored locally. They are called **`PWConfigFile.json`** usually, if you have not renamed it.
-4. Resolve all errors and issues regarding public API changes, e.g., `setConfigName` method does not exist anymore. See the [Initialization](#initialization) section to get more details.
-
 # Usage
 ## Initialization
 
@@ -366,23 +373,20 @@ import {Platform} from 'react-native';
 
 var YOUR_PUBLISHER_ID = 'YOUR_PUBLISHER_ID';
 var YOUR_APP_ID = '';
-var YOUR_VERSION = '';
 
 switch (Platform.OS) {
 case 'ios':
     YOUR_APP_ID = 'YOUR_IOS_APP_ID';
-    YOUR_VERSION = 'YOUR_IOS_APP_VERSION';
     break;
 case 'android':
     YOUR_APP_ID = 'YOUR_ANDROID_APP_ID';
-    YOUR_VERSION = 'YOUR_ANDROID_APP_VERSION';
     break;
 default:
     console.error("Running on an unexpected platform.");
     return;
 }
 
-Playwire.initializeSDK(YOUR_PUBLISHER_ID, YOUR_APP_ID, YOUR_VERSION, () => {
+Playwire.initializeSDK(YOUR_PUBLISHER_ID, YOUR_APP_ID, () => {
     // Playwire SDK is initialized here.
 });
 ```
@@ -390,6 +394,18 @@ Playwire.initializeSDK(YOUR_PUBLISHER_ID, YOUR_APP_ID, YOUR_VERSION, () => {
 > **Note**: A configuration file metadata such as `YOUR_PUBLISHER_ID`, `YOUR_APP_ID`, etc., must be provided by your Playwire Account Manager.
 
 ## Request for ads
+
+### Test ads
+
+To avoid ad filling issues during development, you may enable the 'test mode' to receive test ad creatives. It should be enabled before any ads requests, e.g. before SDK initialization.
+
+```ts
+import {Playwire} from '@intergi/react-native-playwire-sdk';
+
+Playwire.setTest(true);
+```
+
+> **Note**: The test mode must be enabled only for development builds. Make sure you disabled it for production builds, otherwise it may impact on revenue.
 ### Request banner ads
 
 To display a banner ad on your app, you must first import `PlaywireBannerView`. It extends `React.Component` and can be used as view during rendering.
@@ -427,6 +443,26 @@ render() {
     return (
         /* ... */
         <PlaywireBannerView adUnitId={'AdUnitId'} size={customSize} />
+        /* ... */
+    );
+}
+// ...
+```
+
+If you need to provide custom targets which will be included in an ad request, use `customTargets` prop.
+
+```ts
+import {PlaywireBannerView} from '@intergi/react-native-playwire-sdk';
+// ...
+render() {
+    var customTargets = {
+        'segment': 'sport',
+        'location': 'nearby',
+    };
+
+    return (
+        /* ... */
+        <PlaywireBannerView adUnitId={'AdUnitId'} customTargets={customTargets} />
         /* ... */
     );
 }
@@ -501,6 +537,20 @@ Playwire.loadInterstitial(adUnitId);
 ```
 
 > **Note**: An interstitial ad is a one-time-use object, which means it must be loaded again after its shown. Use the `Playwire.getIsInterstitialReady(adUnitId, callback)` method to check if the ad is ready to be presented.
+
+If you need to provide custom targets which will be included in an ad request, pass `customTargets` to load method.
+
+```ts
+import {Playwire} from '@intergi/react-native-playwire-sdk';
+
+var adUnitId = "AdUnitId";
+var customTargets = {
+    'segment': 'sport',
+    'location': 'nearby',
+};
+
+Playwire.loadInterstitial(adUnitId, customTargets);
+```
 
 ```ts
 import {Playwire} from '@intergi/react-native-playwire-sdk';
@@ -599,6 +649,20 @@ Playwire.loadRewarded(adUnitId);
 
 > **Note**: A rewarded ad is a one-time-use object, which means it must be loaded again after its shown. Use the `Playwire.getIsRewardedReady(adUnitId, callback)` method to check if the ad is ready to be presented.
 
+If you need to provide custom targets which will be included in an ad request, pass `customTargets` to load method.
+
+```ts
+import {Playwire} from '@intergi/react-native-playwire-sdk';
+
+var adUnitId = "AdUnitId";
+var customTargets = {
+    'segment': 'sport',
+    'location': 'nearby',
+};
+
+Playwire.loadRewarded(adUnitId, customTargets);
+```
+
 ```ts
 import {Playwire} from '@intergi/react-native-playwire-sdk';
 
@@ -682,6 +746,264 @@ export namespace Playwire {
     * It is fired when a click has been recorded for the rewarded ad.
     */
     export function addRewardedClickedEventListener(callback: (adUnitId: string) => void): void;
+}
+```
+
+### Request for rewarded interstitial ads
+
+To display a rewarded interstitial ad on your app, you must first request it and provide the ad unit.
+
+When requesting a rewarded interstitial ad, we recommend that you do so in advance before planning to present it to your user as the loading process may take time.
+
+```ts
+import {Playwire} from '@intergi/react-native-playwire-sdk';
+
+var adUnitId = "AdUnitId";
+Playwire.loadRewardedInterstitial(adUnitId);
+```
+
+> **Note**: A rewarded interstitial ad is a one-time-use object, which means it must be loaded again after its shown. Use the `Playwire.getIsRewardedInterstitialReady(adUnitId, callback)` method to check if the ad is ready to be presented.
+
+If you need to provide custom targets which will be included in an ad request, pass `customTargets` to load method.
+
+```ts
+import {Playwire} from '@intergi/react-native-playwire-sdk';
+
+var adUnitId = "AdUnitId";
+var customTargets = {
+    'segment': 'sport',
+    'location': 'nearby',
+};
+
+Playwire.loadRewardedInterstitial(adUnitId, customTargets);
+```
+
+```ts
+import {Playwire} from '@intergi/react-native-playwire-sdk';
+
+var adUnitId = "AdUnitId";
+Playwire.getIsRewardedInterstitialReady(adUnitId, isReady => {
+    if (isReady) {
+        // The rewarded interstitial ad is ready and can be presented.
+    } else {
+        // The rewarded interstitial ad cannot be presented and must be loaded.
+    }
+});
+```
+
+If the rewarded interstitial ad is loaded successfully, you can present full screen content.
+
+```ts
+import {Playwire} from '@intergi/react-native-playwire-sdk';
+
+var adUnitId = "AdUnitId";
+Playwire.showRewardedInterstitial(adUnitId);
+``` 
+
+>**Note**: The rewarded interstitial ad is presented only if it is loaded and not shown previously. Otherwise `onFailedToOpenEvent` is invoked.
+
+Playwire provides rewarded interstitial-related callbacks to inform you about a rewarded ad lifecycle. You can add listeners to be notified about the events and how to handle them.
+
+```ts
+onSDKInitialization = () => {
+    Playwire.addRewardedInterstitialLoadedEventListener((adUnitId) => {
+        // ...
+        Playwire.getIsRewardedInterstitialReady(adUnitId, isReady => {
+            if (isReady) {
+                Playwire.showRewardedInterstitial(adUnitId);
+            }
+            else {
+                // Load the rewarded interstitial ad again or show error.
+            }
+        });
+        // ...
+    });
+
+    Playwire.addRewardedInterstitialFailedToLoadEventListener((adUnitId) => {
+        // ...
+    });
+};
+```
+
+See the list below for rewarded interstitial-related methods to add listeners.
+
+```ts
+export namespace Playwire {
+    /**
+    * It is fired when the rewarded interstitial ad successfully loaded full screen content and is ready to be presented.
+    */
+    export function addRewardedInterstitialLoadedEventListener(callback: (adUnitId: string) => void): void;
+    /**
+    * It is fired when the rewarded interstitial ad failed to load full screen content.
+    */
+    export function addRewardedInterstitialFailedToLoadEventListener(callback: (adUnitId: string) => void): void;
+    /**
+    * It is fired when the rewarded interstitial ad presented full screen content.
+    */
+    export function addRewardedInterstitialOpenedEventListener(callback: (adUnitId: string) => void): void;
+    /**
+    * It is fired when the rewarded interstitial ad failed to present full screen content.
+    */
+    export function addRewardedInterstitialFailedToOpenEventListener(callback: (adUnitId: string) => void): void;
+    /**
+    * It is fired when an rewarded interstitial ad dismissed full screen content and the user goes back to the application screen.
+    */
+    export function addRewardedInterstitialClosedEventListener(callback: (adUnitId: string) => void): void;
+    /**
+    * It is fired when an impression has been recorded for the rewarded interstitial ad.
+    */
+    export function addRewardedInterstitialRecordedImpressionEventListener(callback: (adUnitId: string) => void): void;
+    /**
+    * It is fired when a reward has been earned.
+    */
+    export function addRewardedInterstitialEarnedEventListener(callback: (reward: AdReward) => void): void;
+    /**
+    * It is fired when a click has been recorded for the rewarded interstitial ad.
+    */
+    export function addRewardedInterstitialClickedEventListener(callback: (adUnitId: string) => void): void;
+}
+```
+
+### Request for app open ads
+
+To display an app open ad on your app, you must first request it and provide the ad unit.
+
+When requesting an app open ad, we recommend that you do so in advance before planning to present it to your user as the loading process may take time.
+
+```ts
+import {Playwire} from '@intergi/react-native-playwire-sdk';
+
+var adUnitId = "AdUnitId";
+Playwire.loadAppOpenAd(adUnitId);
+```
+
+> **Note**: An app open ad is a one-time-use object, which means it must be loaded again after its shown. Use the `Playwire.getAppOpenAdReady(adUnitId, callback)` method to check if the ad is ready to be presented.
+
+If you need to provide custom targets which will be included in an ad request, pass `customTargets` to load method.
+
+```ts
+import {Playwire} from '@intergi/react-native-playwire-sdk';
+
+var adUnitId = "AdUnitId";
+var customTargets = {
+    'segment': 'sport',
+    'location': 'nearby',
+};
+
+Playwire.loadAppOpenAd(adUnitId, customTargets);
+```
+
+```ts
+import {Playwire} from '@intergi/react-native-playwire-sdk';
+
+var adUnitId = "AdUnitId";
+Playwire.getAppOpenAdReady(adUnitId, isReady => {
+    if (isReady) {
+        // The app open ad is ready and can be presented.
+    } else {
+        // The app open ad cannot be presented and must be loaded.
+    }
+});
+```
+
+An app open ad will time out after four hours. If you present an ad content that was requested for more than four hours, it will no longer be valid and may not earn revenue.
+To ensure you do not show an expired ad, you can check how long it has been since your ad loaded and reload it manually, or you may enable `appOpenAdAutoReloadOnExpiration` to let the `Playwire React Native SDK` monitors the ad expiration and take care about reloading the expired ad.
+
+```ts
+import {Playwire} from '@intergi/react-native-playwire-sdk';
+
+var adUnitId = "AdUnitId";
+Playwire.getAppOpenAdAutoReloadOnExpiration(adUnitId, isEnabled => {
+    if (!isEnabled) {
+        Playwire.setAppOpenAdAutoReloadOnExpiration(adUnitId, true);
+    }
+});
+```
+
+If the app open ad is loaded successfully, you can present full screen content.
+
+```ts
+import {Playwire} from '@intergi/react-native-playwire-sdk';
+
+var adUnitId = "AdUnitId";
+Playwire.showAppOpenAd(adUnitId);
+```
+
+> **Note**: The app open ad is presented only if it is loaded and not shown previously. Otherwise, `onFailedToOpenEvent` is invoked.
+
+As app open ads are designed to be shown when a user brings your app to the foreground, you need to listen to the application state changes. You can do it by subscribing to [AppState](https://reactnative.dev/docs/appstate).
+```ts
+import React, {useRef} from 'react';
+import {AppState} from 'react-native';
+
+const appState = useRef(AppState.currentState);
+
+onSDKInitialization = () => {
+    AppState.addEventListener('change', nextAppState => {
+      if (appState.match(/background/) && nextAppState === 'active') {
+
+        var adUnitId = "AdUnitId";
+        Playwire.showAppOpenAd(adUnitId);
+      }
+    });
+}
+```
+
+Playwire provides 'app open ad'-related callbacks to inform you about an app open ad lifecycle. You can add listeners to be notified about events and how to handle them.
+
+```ts
+onSDKInitialization = () => {
+    Playwire.addAppOpenAdLoadedEventListener((adUnitId) => {
+        // ...
+        Playwire.getAppOpenAdReady(adUnitId, isReady => {
+            if (isReady) {
+                Playwire.showAppOpenAd(adUnitId);
+            }
+            else {
+                // Load the app open ad again or show error.
+            }
+        });
+        // ...
+    });
+
+    Playwire.addAppOpenAdFailedToLoadEventListener((adUnitId) => {
+        // ...
+    });
+};
+```
+
+See the list below for 'app open ad'-related methods to add listeners.
+
+```ts
+export namespace Playwire = {
+    /**
+    * Add a handler to event when the app open ad successfully loaded full screen content. 
+    */
+    export function addAppOpenAdLoadedEventListener(handler: AdUnitEventHandler): void
+    /**
+     * Add a handler to event when the app open ad failed to load full screen content. 
+     */
+    export function addAppOpenAdFailedToLoadEventListener(handler: AdUnitEventHandler): void;
+    /**
+     * Add a handler to event when the app open ad presented full screen content. 
+     */
+    export function addAppOpenAdOpenedEventListener(handler: AdUnitEventHandler): void;
+    /**
+     * Add a handler to event when the app open ad failed to present full screen content. 
+     */
+    export function addAppOpenAdFailedToOpenEventListener(handler: AdUnitEventHandler): void;
+    /**
+     * Add a handler to event when the app open ad dismissed full screen content. 
+     */
+    export function addAppOpenAdClosedEventListener(handler: AdUnitEventHandler): void;
+    /**
+     * Add a handler to event when an app open has been recorded for the app open ad. 
+     */
+    export function addAppOpenAdRecordedImpressionEventListener(handler: AdUnitEventHandler): void;
+    /**
+     * Add a handler to event when a click has been recorded for the app open ad. 
+     */
+    export function addAppOpenAdClickedEventListener(handler: AdUnitEventHandler): void;
 }
 ```
 
