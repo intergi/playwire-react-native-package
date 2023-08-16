@@ -1,7 +1,7 @@
 <H1 align="center">Playwire React Native SDK</H1>
 
 <p align="center">
-    <a href="http://www.playwire.com"><img alt="Version" src="https://img.shields.io/badge/version-8.4.0-blue"></a>
+    <a href="http://www.playwire.com"><img alt="Version" src="https://img.shields.io/badge/version-8.4.1-blue"></a>
 </p>
 
 ---
@@ -112,7 +112,7 @@ Do the following to resolve required dependencies for iOS:
         pod 'GoogleUtilities', :modular_headers => true
         pod 'FirebaseCoreInternal', :modular_headers => true
         pod 'FirebaseCore', :modular_headers => true
-        pod 'Playwire', '8.4.0'
+        pod 'Playwire', '8.4.1'
         # ...
     end
     ```
@@ -125,7 +125,7 @@ Do the following to resolve required dependencies for iOS:
         pod 'GoogleUtilities', :modular_headers => true
         pod 'FirebaseCoreInternal', :modular_headers => true
         pod 'FirebaseCore', :modular_headers => true
-        pod 'Playwire/Coppa', '8.4.0'
+        pod 'Playwire/Coppa', '8.4.1'
         # ...
     end
     ```
@@ -208,7 +208,7 @@ You have to create a **`keystore.properties`** file by yourself using the templa
     ```gradle
     dependencies {
         // ...
-        api 'com.intergi.playwire:playwiresdk_total:8.4.0'
+        api 'com.intergi.playwire:playwiresdk_total:8.4.1'
         api 'com.google.firebase:firebase-analytics-ktx:21.1.1'
         // ...
     }
@@ -219,7 +219,7 @@ You have to create a **`keystore.properties`** file by yourself using the templa
     ```gradle
     dependencies {
         // ...
-        api 'com.intergi.playwire:playwiresdk_coppa:8.4.0'
+        api 'com.intergi.playwire:playwiresdk_coppa:8.4.1'
         api 'com.google.firebase:firebase-analytics-ktx:21.1.1'
         // ...
     }
