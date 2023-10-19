@@ -1,7 +1,7 @@
 <H1 align="center">Playwire React Native SDK</H1>
 
 <p align="center">
-    <a href="http://www.playwire.com"><img alt="Version" src="https://img.shields.io/badge/version-8.4.1-blue"></a>
+    <a href="http://www.playwire.com"><img alt="Version" src="https://img.shields.io/badge/version-9.0.0-blue"></a>
 </p>
 
 ---
@@ -112,7 +112,7 @@ Do the following to resolve required dependencies for iOS:
         pod 'GoogleUtilities', :modular_headers => true
         pod 'FirebaseCoreInternal', :modular_headers => true
         pod 'FirebaseCore', :modular_headers => true
-        pod 'Playwire', '8.4.1'
+        pod 'Playwire', '9.0.1'
         # ...
     end
     ```
@@ -125,7 +125,7 @@ Do the following to resolve required dependencies for iOS:
         pod 'GoogleUtilities', :modular_headers => true
         pod 'FirebaseCoreInternal', :modular_headers => true
         pod 'FirebaseCore', :modular_headers => true
-        pod 'Playwire/Coppa', '8.4.1'
+        pod 'Playwire/Coppa', '9.0.1'
         # ...
     end
     ```
@@ -208,7 +208,7 @@ You have to create a **`keystore.properties`** file by yourself using the templa
     ```gradle
     dependencies {
         // ...
-        api 'com.intergi.playwire:playwiresdk_total:8.4.1'
+        api 'com.intergi.playwire:playwiresdk_total:9.0.1'
         api 'com.google.firebase:firebase-analytics-ktx:21.1.1'
         // ...
     }
@@ -450,26 +450,6 @@ render() {
 // ...
 ```
 
-If you need to provide custom targets which will be included in an ad request, use `customTargets` prop.
-
-```ts
-import {PlaywireBannerView} from '@intergi/react-native-playwire-sdk';
-// ...
-render() {
-    var customTargets = {
-        'segment': 'sport',
-        'location': 'nearby',
-    };
-
-    return (
-        /* ... */
-        <PlaywireBannerView adUnitId={'AdUnitId'} customTargets={customTargets} />
-        /* ... */
-    );
-}
-// ...
-```
-
 If the banner is loaded successfully, you would receive `onAdLoaded` callbacks and the banner content would be rendered automatically. If not, you would receive `onAdFailedToLoad` callbacks.
 
 ```ts
@@ -538,20 +518,6 @@ Playwire.loadInterstitial(adUnitId);
 ```
 
 > **Note**: An interstitial ad is a one-time-use object, which means it must be loaded again after its shown. Use the `Playwire.getIsInterstitialReady(adUnitId, callback)` method to check if the ad is ready to be presented.
-
-If you need to provide custom targets which will be included in an ad request, pass `customTargets` to load method.
-
-```ts
-import {Playwire} from '@intergi/react-native-playwire-sdk';
-
-var adUnitId = "AdUnitId";
-var customTargets = {
-    'segment': 'sport',
-    'location': 'nearby',
-};
-
-Playwire.loadInterstitial(adUnitId, customTargets);
-```
 
 ```ts
 import {Playwire} from '@intergi/react-native-playwire-sdk';
@@ -649,20 +615,6 @@ Playwire.loadRewarded(adUnitId);
 ```
 
 > **Note**: A rewarded ad is a one-time-use object, which means it must be loaded again after its shown. Use the `Playwire.getIsRewardedReady(adUnitId, callback)` method to check if the ad is ready to be presented.
-
-If you need to provide custom targets which will be included in an ad request, pass `customTargets` to load method.
-
-```ts
-import {Playwire} from '@intergi/react-native-playwire-sdk';
-
-var adUnitId = "AdUnitId";
-var customTargets = {
-    'segment': 'sport',
-    'location': 'nearby',
-};
-
-Playwire.loadRewarded(adUnitId, customTargets);
-```
 
 ```ts
 import {Playwire} from '@intergi/react-native-playwire-sdk';
@@ -765,20 +717,6 @@ Playwire.loadRewardedInterstitial(adUnitId);
 
 > **Note**: A rewarded interstitial ad is a one-time-use object, which means it must be loaded again after its shown. Use the `Playwire.getIsRewardedInterstitialReady(adUnitId, callback)` method to check if the ad is ready to be presented.
 
-If you need to provide custom targets which will be included in an ad request, pass `customTargets` to load method.
-
-```ts
-import {Playwire} from '@intergi/react-native-playwire-sdk';
-
-var adUnitId = "AdUnitId";
-var customTargets = {
-    'segment': 'sport',
-    'location': 'nearby',
-};
-
-Playwire.loadRewardedInterstitial(adUnitId, customTargets);
-```
-
 ```ts
 import {Playwire} from '@intergi/react-native-playwire-sdk';
 
@@ -879,20 +817,6 @@ Playwire.loadAppOpenAd(adUnitId);
 ```
 
 > **Note**: An app open ad is a one-time-use object, which means it must be loaded again after its shown. Use the `Playwire.getAppOpenAdReady(adUnitId, callback)` method to check if the ad is ready to be presented.
-
-If you need to provide custom targets which will be included in an ad request, pass `customTargets` to load method.
-
-```ts
-import {Playwire} from '@intergi/react-native-playwire-sdk';
-
-var adUnitId = "AdUnitId";
-var customTargets = {
-    'segment': 'sport',
-    'location': 'nearby',
-};
-
-Playwire.loadAppOpenAd(adUnitId, customTargets);
-```
 
 ```ts
 import {Playwire} from '@intergi/react-native-playwire-sdk';
@@ -1007,6 +931,117 @@ export namespace Playwire = {
     export function addAppOpenAdClickedEventListener(handler: AdUnitEventHandler): void;
 }
 ```
+
+### Custom Targeting
+
+If you require specifying the type of content of the ads that will be delivered you could tag your requests with specific words.
+
+Tags are handled in the `PlaywireTargeting` class. You can pass `[key: string]: string` with targets, set and remove tags at desired indexes or using arrays.
+
+```ts
+import {PlaywireTargeting} from '@intergi/react-native-playwire-sdk';
+
+var targets = {'custom_key': 'ad_unit'};
+var targeting = new PlaywireTargeting();
+
+// Add object `[key: string]: string`
+targeting.add(targets);
+
+// Remove keys
+targeting.remove(['custom_key']);
+
+// Set client tag at index 1
+targeting.setClientTag('custom_tag', 1);
+
+// Remove client tag at index 1
+targeting.removeClientTag(1);
+
+// Clear all
+targeting.clear();
+```
+
+The custom targeting can be set at several levels:
+
+1. **Config level**
+
+    You can decide to tag a specific ad unit in the backend configuration, no code will be required in the application. Please contact your Account Manager for it.
+
+2. **Global level**
+
+    You can put tags in the global PlaywireSDK object. These tags will be applied to every request of every ad unit in your application.
+
+    ```ts
+    import {Playwire, PlaywireTargeting} from '@intergi/react-native-playwire-sdk';
+    // ...
+    var targets = {'global_key': 'global'};
+    var targeting = new PlaywireTargeting();
+    targeting.add(targets);
+    targeting.setClientTag('global_tag', 1);
+
+    Playwire.setGlobalTargeting(targeting);
+    // ...
+    ```
+
+3. **Ad unit level**
+
+    You can put tags in the ad unit level and they will be taken into account for any future requests on these ad units. In view ads like banners, changing tags after loading the ad will take effect in future refresh of ad content.
+
+    ```ts
+    import {Playwire, PlaywireTargeting} from '@intergi/react-native-playwire-sdk';
+    // ...
+    var targets = {'ad_unit_key': 'ad_unit'};
+    var targeting = new PlaywireTargeting();
+    targeting.add(targets);
+    targeting.setClientTag('ad_unit_tag', 1);
+
+    var adUnitId = 'adUnitId';
+
+    // Make sure SDK is initialized to set ad unit level targeting
+    Playwire.setInterstitialTargeting(adUnitId, targeting);
+    Playwire.setRewardedTargeting(adUnitId, targeting);
+    Playwire.setRewardedInterstitialTargeting(adUnitId, targeting);
+    Playwire.setAppOpenAdTargeting(adUnitId, targeting);
+    // ...
+    ```
+
+    ```ts
+    import {PlaywireBannerView, PlaywireTargeting} from '@intergi/react-native-playwire-sdk';
+    // ...
+    render() {
+
+        var targeting = new PlaywireTargeting()
+        .add({'ad_unit_key': 'ad_unit'})
+        .setClientTag('ad_unit_tag', 1);
+
+        return (
+            /* ... */
+            <PlaywireBannerView adUnitId={'AdUnitId'} targeting={targeting} />
+            /* ... */
+        );
+    }
+    // ...
+    ```
+
+4. **Ad unit loading level**
+
+    If you need to provide the custom targets which will be included in a single ad request, pass the `targeting` argument to the load method.
+
+    ```ts
+    import {Playwire, PlaywireTargeting} from '@intergi/react-native-playwire-sdk';
+    // ...
+    var targets = {'ad_unit_key': 'ad_unit'};
+    var targeting = new PlaywireTargeting();
+    targeting.add(targets);
+    targeting.setClientTag('ad_unit_tag', 1);
+
+    var adUnitId = 'adUnitId';
+
+    Playwire.loadInterstitial(adUnitId, targeting);
+    Playwire.loadRewarded(adUnitId, targeting);
+    Playwire.loadRewardedInterstitial(adUnitId, targeting);
+    Playwire.loadAppOpenAd(adUnitId, targeting);
+    // ...
+    ```
 
 ## Logger
 
