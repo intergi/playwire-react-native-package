@@ -1,7 +1,7 @@
 <H1 align="center">Playwire React Native SDK</H1>
 
 <p align="center">
-    <a href="http://www.playwire.com"><img alt="Version" src="https://img.shields.io/badge/version-9.2.0-blue"></a>
+    <a href="http://www.playwire.com"><img alt="Version" src="https://img.shields.io/badge/version-9.2.1-blue"></a>
 </p>
 
 ---
