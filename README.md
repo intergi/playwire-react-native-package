@@ -1,7 +1,7 @@
 <H1 align="center">Playwire React Native SDK</H1>
 
 <p align="center">
-    <a href="http://www.playwire.com"><img alt="Version" src="https://img.shields.io/badge/version-9.2.1-blue"></a>
+    <a href="http://www.playwire.com"><img alt="Version" src="https://img.shields.io/badge/version-9.3.0-blue"></a>
 </p>
 
 ---
@@ -112,7 +112,7 @@ Do the following to resolve required dependencies for iOS:
         pod 'GoogleUtilities', :modular_headers => true
         pod 'FirebaseCoreInternal', :modular_headers => true
         pod 'FirebaseCore', :modular_headers => true
-        pod 'Playwire', '9.2.0'
+        pod 'Playwire', '9.3.0'
         # ...
     end
     ```
@@ -125,7 +125,7 @@ Do the following to resolve required dependencies for iOS:
         pod 'GoogleUtilities', :modular_headers => true
         pod 'FirebaseCoreInternal', :modular_headers => true
         pod 'FirebaseCore', :modular_headers => true
-        pod 'Playwire/Coppa', '9.2.0'
+        pod 'Playwire/Coppa', '9.3.0'
         # ...
     end
     ```
@@ -197,6 +197,9 @@ You have to create a **`keystore.properties`** file by yourself using the templa
                 // Pangle
                 url 'https://artifact.bytedance.com/repository/pangle/'
             }
+            maven {
+                url 'https://cboost.jfrog.io/artifactory/chartboost-ads'
+            }
             // ...
         }
         // ...
@@ -208,8 +211,8 @@ You have to create a **`keystore.properties`** file by yourself using the templa
     ```gradle
     dependencies {
         // ...
-        api 'com.intergi.playwire:playwiresdk_total:9.2.0'
-        api 'com.google.firebase:firebase-analytics-ktx:21.1.1'
+        api 'com.intergi.playwire:playwiresdk_total:9.3.0'
+        api 'com.google.firebase:firebase-analytics:21.6.1'
         // ...
     }
     ```
@@ -219,8 +222,8 @@ You have to create a **`keystore.properties`** file by yourself using the templa
     ```gradle
     dependencies {
         // ...
-        api 'com.intergi.playwire:playwiresdk_coppa:9.2.0'
-        api 'com.google.firebase:firebase-analytics-ktx:21.1.1'
+        api 'com.intergi.playwire:playwiresdk_coppa:9.3.0'
+        api 'com.google.firebase:firebase-analytics:21.6.1'
         // ...
     }
     ```
@@ -363,6 +366,32 @@ This section describes 3 steps for updating the `Playwire React Native SDK` to t
 
     * Verify that you did update the `Playwire` dependency by going through "External Libraries" window in Android Studio and searching for `com.intergi.playwire:playwiresdk:x.y.z`, where `x.y.z` is the version of the `Playwire` dependency that was downloaded and integrated.
 # Usage
+## CMP
+
+To comply with the [General Data Protection Regulation (GDPR) of the Interactive Advertising Bureau (iab)](https://www.iab.com/topics/privacy/gdpr), the `Playwire React Native SDK` uses Google UMP as a consent management platform (CMP). Google UMP is a IAB-compliant CMP, certified under the TCF framework.
+
+If you want to use your own CMP and avoid colliding with the `Playwire React Native SDK's` CMP, it has to be compatible with TCF.
+
+If you will not use our default Google UMP as a CMP, you must declare this before initializing the `Playwire React Native SDK`.
+You can select between:
+
+- `GoogleUmp`: This is the default and does not have to be declared.
+- `AlreadyLaunched`: Indicates that you are using a third-party CMP, and that it has been initialized. You must launch your CMP and wait for the user response before you initialize our SDK.
+- `None`: No CMP will be used. (This will dramatically affect your revenue!).
+
+> **Note**: If you do not plan to use Google UMP, please contact your Account Coordinator as we may need to apply extra settings to your account so ad delivery can perform as expected.
+
+```ts
+import {Playwire} from '@intergi/react-native-playwire-sdk';
+
+Playwire.setCMP('GoogleUMP');
+// Playwire.setCMP('AlreadyLaunched');
+// Playwire.setCMP('None');
+
+Playwire.initializeSDK('YOUR_PUBLISHER_ID', 'YOUR_AN_APP_ID', () => {
+    // Playwire SDK is initialized here.
+});
+```
 ## Initialization
 
 Initialize the `Playwire React Native SDK` in your app.
