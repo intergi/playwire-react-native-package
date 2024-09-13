@@ -1,18 +1,18 @@
 <H1 align="center">Playwire React Native SDK</H1>
 
 <p align="center">
-    <a href="http://www.playwire.com"><img alt="Version" src="https://img.shields.io/badge/version-9.4.0-blue"></a>
+    <a href="http://www.playwire.com"><img alt="Version" src="https://img.shields.io/badge/version-10.3.0-blue"></a>
 </p>
 
 ---
 
 # Requirements
 
-- iOS 12.0+
+- iOS 13.0+
 - Xcode 10.0+
 - Android 5.0+
-- Android Studio 3.3.2 or higher
-- React Native 0.72.0+
+- Android Studio Flamingo or higher
+- React Native 0.75.0+
 - JDK 11+
 
 # Installation
@@ -112,7 +112,7 @@ Do the following to resolve required dependencies for iOS:
         pod 'GoogleUtilities', :modular_headers => true
         pod 'FirebaseCoreInternal', :modular_headers => true
         pod 'FirebaseCore', :modular_headers => true
-        pod 'Playwire', '9.4.0'
+        pod 'Playwire', '10.3.0'
         # ...
     end
     ```
@@ -125,7 +125,7 @@ Do the following to resolve required dependencies for iOS:
         pod 'GoogleUtilities', :modular_headers => true
         pod 'FirebaseCoreInternal', :modular_headers => true
         pod 'FirebaseCore', :modular_headers => true
-        pod 'Playwire/Coppa', '9.4.0'
+        pod 'Playwire/Coppa', '10.3.0'
         # ...
     end
     ```
@@ -172,7 +172,7 @@ You have to create a **`keystore.properties`** file by yourself using the templa
         // ...
         dependencies {
             // ...
-            classpath "com.google.gms:google-services:4.3.14"
+            classpath "com.google.gms:google-services:4.4.2"
             // ...
         }
         // ...
@@ -211,8 +211,8 @@ You have to create a **`keystore.properties`** file by yourself using the templa
     ```gradle
     dependencies {
         // ...
-        api 'com.intergi.playwire:playwiresdk_total:9.4.0'
-        api 'com.google.firebase:firebase-analytics:21.6.1'
+        api 'com.intergi.playwire:playwiresdk_total:10.3.0'
+        api 'com.google.firebase:firebase-analytics:22.1.0'
         // ...
     }
     ```
@@ -222,8 +222,8 @@ You have to create a **`keystore.properties`** file by yourself using the templa
     ```gradle
     dependencies {
         // ...
-        api 'com.intergi.playwire:playwiresdk_coppa:9.4.0'
-        api 'com.google.firebase:firebase-analytics:21.6.1'
+        api 'com.intergi.playwire:playwiresdk_coppa:10.3.0'
+        api 'com.google.firebase:firebase-analytics:22.1.0'
         // ...
     }
     ```
@@ -268,10 +268,6 @@ You have to create a **`keystore.properties`** file by yourself using the templa
     <!--optional by Amazon if you need geo location -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
-    <!--recommended by AdColony -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application>
         <!--required by Google -->
