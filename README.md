@@ -1,18 +1,26 @@
 <H1 align="center">Playwire React Native SDK</H1>
 
 <p align="center">
-    <a href="http://www.playwire.com"><img alt="Version" src="https://img.shields.io/badge/version-10.7.0-blue"></a>
+    <a href="http://www.playwire.com"><img alt="Version" src="https://img.shields.io/badge/version-11.0.0-blue"></a>
 </p>
 
 ---
 
 # Requirements
 
-- iOS 13.0+
-- Xcode 10.0+
-- Android 5.0+
-- Android Studio Flamingo or higher
-- React Native 0.75.0+
+- Node v14.17.0
+- Yarn v1.22.10
+- Ruby 2.6.3
+- Fastlane 2.178.0
+- Bundler 2.0+
+
+- Cocoapods 1.11.2
+- iOS 15.0+
+- Xcode 16.0+
+
+- Android API 24+
+- build:gradle:8.2.2
+- kotlinVersion = "2.0.0"
 - JDK 11+
 
 # Installation
@@ -112,7 +120,7 @@ Do the following to resolve required dependencies for iOS:
         pod 'GoogleUtilities', :modular_headers => true
         pod 'FirebaseCoreInternal', :modular_headers => true
         pod 'FirebaseCore', :modular_headers => true
-        pod 'Playwire', '10.7.0'
+        pod 'Playwire', '11.0.0'
         # ...
     end
     ```
@@ -125,7 +133,7 @@ Do the following to resolve required dependencies for iOS:
         pod 'GoogleUtilities', :modular_headers => true
         pod 'FirebaseCoreInternal', :modular_headers => true
         pod 'FirebaseCore', :modular_headers => true
-        pod 'Playwire/Coppa', '10.7.0'
+        pod 'Playwire/Coppa', '11.0.0'
         # ...
     end
     ```
@@ -211,8 +219,9 @@ You have to create a **`keystore.properties`** file by yourself using the templa
     ```gradle
     dependencies {
         // ...
-        api 'com.intergi.playwire:playwiresdk_total:10.7.0'
-        api 'com.google.firebase:firebase-analytics:22.1.0'
+        api 'com.intergi.playwire:playwiresdk_total:11.0.0'
+        api platform 'com.google.firebase:firebase-bom:32.7.2' 
+        api 'com.google.firebase:firebase-analytics'
         // ...
     }
     ```
@@ -222,8 +231,9 @@ You have to create a **`keystore.properties`** file by yourself using the templa
     ```gradle
     dependencies {
         // ...
-        api 'com.intergi.playwire:playwiresdk_coppa:10.7.0'
-        api 'com.google.firebase:firebase-analytics:22.1.0'
+        api 'com.intergi.playwire:playwiresdk_coppa:11.0.0'
+        api platform 'com.google.firebase:firebase-bom:32.7.2' 
+        api 'com.google.firebase:firebase-analytics'
         // ...
     }
     ```
@@ -278,9 +288,6 @@ You have to create a **`keystore.properties`** file by yourself using the templa
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="YOUR_GOOGLE_APP_ID"/>
         
-        <!--required by Amazon -->
-        <activity android:name="com.amazon.device.ads.DTBInterstitialActivity"/>
-        <activity android:name="com.amazon.device.ads.DTBAdActivity"/>
     </application>
     ```
 
