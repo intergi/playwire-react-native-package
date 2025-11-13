@@ -1,7 +1,7 @@
 <H1 align="center">Playwire React Native SDK</H1>
 
 <p align="center">
-    <a href="http://www.playwire.com"><img alt="Version" src="https://img.shields.io/badge/version-11.5.0-blue"></a>
+    <a href="http://www.playwire.com"><img alt="Version" src="https://img.shields.io/badge/version-11.6.0-blue"></a>
 </p>
 
 ---
@@ -120,7 +120,7 @@ Do the following to resolve required dependencies for iOS:
         pod 'GoogleUtilities', :modular_headers => true
         pod 'FirebaseCoreInternal', :modular_headers => true
         pod 'FirebaseCore', :modular_headers => true
-        pod 'Playwire', '11.5.0'
+        pod 'Playwire', '11.6.0'
         # ...
     end
     ```
@@ -133,7 +133,7 @@ Do the following to resolve required dependencies for iOS:
         pod 'GoogleUtilities', :modular_headers => true
         pod 'FirebaseCoreInternal', :modular_headers => true
         pod 'FirebaseCore', :modular_headers => true
-        pod 'Playwire/Coppa', '11.5.0'
+        pod 'Playwire/Coppa', '11.6.0'
         # ...
     end
     ```
@@ -219,7 +219,7 @@ You have to create a **`keystore.properties`** file by yourself using the templa
     ```gradle
     dependencies {
         // ...
-        api 'com.intergi.playwire:playwiresdk_total:11.5.0'
+        api 'com.intergi.playwire:playwiresdk_total:11.6.0'
         api platform 'com.google.firebase:firebase-bom:32.7.2' 
         api 'com.google.firebase:firebase-analytics'
         // ...
@@ -231,7 +231,7 @@ You have to create a **`keystore.properties`** file by yourself using the templa
     ```gradle
     dependencies {
         // ...
-        api 'com.intergi.playwire:playwiresdk_coppa:11.5.0'
+        api 'com.intergi.playwire:playwiresdk_coppa:11.6.0'
         api platform 'com.google.firebase:firebase-bom:32.7.2' 
         api 'com.google.firebase:firebase-analytics'
         // ...
